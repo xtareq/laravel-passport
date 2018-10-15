@@ -8,6 +8,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import store from './store'
+import BootstrapVue from 'bootstrap-vue'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,6 +18,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+//Vue.component('users-component', require('./components/user/UsersComp.vue'));
 Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue')
@@ -31,6 +34,8 @@ Vue.component(
     require('./components/passport/PersonalAccessTokens.vue')
 );
 
+Vue.use(BootstrapVue);
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store
 });

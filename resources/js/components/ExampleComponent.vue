@@ -15,9 +15,11 @@
 </template>
 
 <script>
+    
     export default {
         mounted() {
-            console.log('Component mounted.')
+           
+            console.log(this.$store.state.mgs)
         }
     }
 </script>
